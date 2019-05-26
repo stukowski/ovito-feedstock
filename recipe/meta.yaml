@@ -25,36 +25,23 @@ requirements:
     - {{ cdt('libselinux') }}  # [linux]
     - {{ cdt('libxdamage') }}  # [linux]
     - {{ cdt('libxxf86vm') }}  # [linux]
-    - qscintilla2
     - sphinx
     - cmake
     - make
-    - fftw
     - git
-    - boost =1.57.0
-    - qt
-    - zlib
   host:
     - xorg-libxfixes  # [linux]
+    - qt
     - python
-    - pip
     - numpy
-    - sip
     - pyqt
-    - matplotlib
-    - ase
+    - boost =1.57.0
+    - zlib
+    - fftw
   run:
     - python
-    - numpy
-    - sip
-    - pyqt
     - matplotlib
     - ase
-    - qscintilla2
-    - fftw
-    - boost =1.57.0
-    - qt
-    - zlib
 
 test:
   imports:
