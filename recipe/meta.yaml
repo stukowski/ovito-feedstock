@@ -13,7 +13,7 @@ source:
   - gcc_7_2.patch
 
 build:
-  number: 1
+  number: 3
   skip: True  # [not linux]
 
 requirements:
@@ -30,12 +30,12 @@ requirements:
     - cmake
     - make
     - fftw
-    - libglu
+    # - libglu
     - git
     - boost =1.57.0
-    - libstdcxx-ng
+    # - libstdcxx-ng
     - qt
-    - libgcc-ng
+    # - libgcc-ng
     - zlib
   host:
     - xorg-libxfixes  # [linux]
@@ -55,11 +55,11 @@ requirements:
     - ase
     - qscintilla2
     - fftw
-    - libglu
+    # - libglu
     - boost =1.57.0
-    - libstdcxx-ng
+    # - libstdcxx-ng
     - qt
-    - libgcc-ng
+    # - libgcc-ng
     - zlib
 
 test:
