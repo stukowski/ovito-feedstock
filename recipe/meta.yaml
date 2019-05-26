@@ -30,12 +30,9 @@ requirements:
     - cmake
     - make
     - fftw
-    # - libglu
     - git
     - boost =1.57.0
-    # - libstdcxx-ng
     - qt
-    # - libgcc-ng
     - zlib
   host:
     - xorg-libxfixes  # [linux]
@@ -55,11 +52,8 @@ requirements:
     - ase
     - qscintilla2
     - fftw
-    # - libglu
     - boost =1.57.0
-    # - libstdcxx-ng
     - qt
-    # - libgcc-ng
     - zlib
 
 test:
