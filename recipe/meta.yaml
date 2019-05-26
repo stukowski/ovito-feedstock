@@ -13,7 +13,7 @@ source:
   - gcc_7_2.patch
 
 build:
-  number: 2
+  number: 3
   skip: True  # [not linux]
 
 requirements:
@@ -25,42 +25,24 @@ requirements:
     - {{ cdt('libselinux') }}  # [linux]
     - {{ cdt('libxdamage') }}  # [linux]
     - {{ cdt('libxxf86vm') }}  # [linux]
-    - qscintilla2
     - sphinx
     - cmake
     - make
-    - fftw
-    - libglu
     - git
-    - boost =1.57.0
-    - libstdcxx-ng
-    - qt
-    - libgcc-ng
-    - zlib
   host:
     - xorg-libxfixes  # [linux]
+    - qt
     - python
-    - pip
     - numpy
-    - sip
     - pyqt
-    - matplotlib
-    - ase
+    - qscintilla2
+    - boost =1.57.0
+    - zlib
+    - fftw
   run:
     - python
-    - numpy
-    - sip
-    - pyqt
     - matplotlib
     - ase
-    - qscintilla2
-    - fftw
-    - libglu
-    - boost =1.57.0
-    - libstdcxx-ng
-    - qt
-    - libgcc-ng
-    - zlib
 
 test:
   imports:
