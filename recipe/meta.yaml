@@ -35,6 +35,7 @@ requirements:
     - python
     - numpy
     - pyqt
+    - qscintilla2
     - boost =1.57.0
     - zlib
     - fftw
