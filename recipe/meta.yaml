@@ -9,20 +9,27 @@ package:
 source:
   url: https://gitlab.com/stuko/{{ name }}/-/archive/v{{ version }}/{{ name }}-v{{ version }}.tar.gz
   sha256: {{ sha256 }}
+  patches:
+  - gcc_7_2.patch
 
 build:
-  number: 0
+  number: 1
   skip: True  # [not linux]
 
 requirements:
   build:
     - {{ compiler('cxx') }}
     - {{ compiler('c') }}
+    - {{ cdt('mesa-libgl-devel') }}  # [linux]
+    - {{ cdt('mesa-dri-drivers') }}  # [linux]
+    - {{ cdt('libselinux') }}  # [linux]
+    - {{ cdt('libxdamage') }}  # [linux]
+    - {{ cdt('libxxf86vm') }}  # [linux]
     - qscintilla2
     - sphinx
     - cmake
-    - make 
-    - fftw 
+    - make
+    - fftw
     - libglu
     - git
     - boost =1.57.0
@@ -31,17 +38,18 @@ requirements:
     - libgcc-ng
     - zlib
   host:
+    - xorg-libxfixes  # [linux]
     - python
     - pip
-    - numpy 
-    - sip 
+    - numpy
+    - sip
     - pyqt
     - matplotlib
     - ase
   run:
     - python
-    - numpy 
-    - sip 
+    - numpy
+    - sip
     - pyqt
     - matplotlib
     - ase
@@ -65,10 +73,10 @@ about:
   license_file: '{{ environ["RECIPE_DIR"] }}/LICENSE.txt'
   summary: 'Scientific visualization and analysis software for atomistic simulation data'
   description: |
-    OVITO is a scientific visualization and analysis software for 
-    atomistic and particle simulation data. It helps scientists gain 
-    better insights into materials phenomena and physical processes. 
-    OVITO is being developed by Alexander Stukowski at Darmstadt 
+    OVITO is a scientific visualization and analysis software for
+    atomistic and particle simulation data. It helps scientists gain
+    better insights into materials phenomena and physical processes.
+    OVITO is being developed by Alexander Stukowski at Darmstadt
     University of Technology, Germany.
   doc_url: http://www.ovito.org/
   dev_url: https://gitlab.com/stuko/ovito
