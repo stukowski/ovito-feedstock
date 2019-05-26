@@ -34,5 +34,5 @@ make
 cp lib/ovito/*.$SHLIB_EXT ${PREFIX}/lib
 cp -r lib/ovito/plugins/python/ovito ${SP_DIR}
 mkdir -p ${PREFIX}/lib/ovito/plugins
-cp lib/ovito/plugins/*.so ${PREFIX}/lib/ovito/plugins
+cp lib/ovito/plugins/*.$SHLIB_EXT ${PREFIX}/lib/ovito/plugins
 sed -i 's\/../../..\/../../../../ovito/plugins\g' ${SP_DIR}/ovito/plugins/__init__.py
