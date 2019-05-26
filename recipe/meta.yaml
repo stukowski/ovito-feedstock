@@ -39,7 +39,6 @@ requirements:
     - boost =1.57.0
     - zlib
     - fftw
-    - xorg-libxext
   run:
     - python
     - matplotlib
