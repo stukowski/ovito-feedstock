@@ -48,8 +48,7 @@ test:
 
 about:
   home: https://www.ovito.org
-  license: GPL-3.0
-  license_family: GPL
+  license: GPL-3.0-or-later
   license_file: '{{ environ["RECIPE_DIR"] }}/LICENSE.txt'
   summary: 'Scientific visualization and analysis software for atomistic simulation data'
   description: |
