@@ -38,6 +38,8 @@ requirements:
   run:
     # nettle from defaults is not compatible
     - {{ pin_compatible('nettle', exact=True) }}  # [unix]
+  ignore_run_exports:
+    - libxslt
 
 test:
   commands:
