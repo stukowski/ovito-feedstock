@@ -31,17 +31,14 @@ requirements:
   host:
     - boost
     - ffmpeg
-    - hdf5
     - libnetcdf
-    - libssh
-    - pyqt
     - qt
     - zlib
   run:
 
-#test:
-#  imports:
-#    - ovito
+test:
+  commands:
+    - command -v ovito
 
 about:
   home: https://www.ovito.org
