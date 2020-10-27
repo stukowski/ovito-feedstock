@@ -35,6 +35,8 @@ requirements:
     - qt
     - zlib
   run:
+    # nettle from defaults is not compatible
+    - {{ pin_compatible('nettle', exact=True) }}
 
 test:
   commands:
