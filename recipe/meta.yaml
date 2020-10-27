@@ -33,6 +33,7 @@ requirements:
     - ffmpeg
     - libnetcdf
     - qt
+    - libxslt
     - zlib
   run:
     # nettle from defaults is not compatible
