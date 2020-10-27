@@ -3,7 +3,7 @@ About ovito
 
 Home: https://www.ovito.org
 
-Package license: GPL-3.0
+Package license: GPL-3.0-or-later
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/ovito-feedstock/blob/master/LICENSE.txt)
 

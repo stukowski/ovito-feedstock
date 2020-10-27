@@ -16,8 +16,6 @@ cxx_compiler_version:
 - '10'
 ffmpeg:
 - '4.3'
-hdf5:
-- 1.10.5
 libnetcdf:
 - 4.7.4
 macos_machine:
