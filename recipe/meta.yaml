@@ -27,7 +27,7 @@ requirements:
     - {{ cdt('mesa-libgl-devel') }}  # [linux]
     - {{ cdt('mesa-dri-drivers') }}  # [linux]
     - cmake
-    - make
+    - make  # [unix]
   host:
     - boost
     - ffmpeg
@@ -37,11 +37,12 @@ requirements:
     - zlib
   run:
     # nettle from defaults is not compatible
-    - {{ pin_compatible('nettle', exact=True) }}
+    - {{ pin_compatible('nettle', exact=True) }}  # [unix]
 
 test:
   commands:
-    - command -v ovito
+    - command -v ovito  # [unix]
+    - where prismatic  # [win]
 
 about:
   home: https://www.ovito.org
