@@ -1,6 +1,6 @@
 {% set name = "ovito" %}
-{% set version = "2.9.0" %}
-{% set sha256 = "f0fc561d0e995002c48bee6dc5f7e95c69dd52615a735a1707664a7a5f0e19c4" %}
+{% set version = "3.3.1" %}
+{% set sha256 = "b0bd9a3d5bf2c3fd709985437f8ae10ad0567ffcc71255a0d4a73748f2c7858c" %}
 
 package:
   name: {{ name|lower }}
@@ -9,44 +9,39 @@ package:
 source:
   url: https://gitlab.com/stuko/{{ name }}/-/archive/v{{ version }}/{{ name }}-v{{ version }}.tar.gz
   sha256: {{ sha256 }}
-  patches:
-  - gcc_7_2.patch
 
 build:
-  number: 5
-  skip: True  # [not linux]
+  number: 0
 
 requirements:
   build:
-    - {{ compiler('cxx') }}
     - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+    - {{ cdt('libselinux') }}  # [linux]
+    - {{ cdt('libxcb') }}  # [linux]
+    - {{ cdt('libxdamage') }}  # [linux]
+    - {{ cdt('libxfixes') }}  # [linux]
+    - {{ cdt('libxext-devel') }}  # [linux]
+    - {{ cdt('libxxf86vm') }}  # [linux]
+    - {{ cdt('libXau') }}  # [linux]
     - {{ cdt('mesa-libgl-devel') }}  # [linux]
     - {{ cdt('mesa-dri-drivers') }}  # [linux]
-    - {{ cdt('libselinux') }}  # [linux]
-    - {{ cdt('libxdamage') }}  # [linux]
-    - {{ cdt('libxxf86vm') }}  # [linux]
-    - sphinx
     - cmake
     - make
-    - git
   host:
-    - xorg-libxfixes  # [linux]
-    - qt
-    - python
-    - numpy
+    - boost
+    - ffmpeg
+    - hdf5
+    - libnetcdf
+    - libssh
     - pyqt
-    - qscintilla2
-    - boost =1.57.0
+    - qt
     - zlib
-    - fftw
   run:
-    - python
-    - matplotlib
-    - ase
 
-test:
-  imports:
-    - ovito
+#test:
+#  imports:
+#    - ovito
 
 about:
   home: https://www.ovito.org
