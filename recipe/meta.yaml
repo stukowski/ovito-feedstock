@@ -41,11 +41,10 @@ requirements:
     # nettle from defaults is not compatible
     - {{ pin_compatible('nettle', exact=True) }}  # [unix]
 
-
 test:
   commands:
     - command -v ovito  # [unix]
-    - where prismatic  # [win]
+    - where ovito  # [win]
 
 about:
   home: https://www.ovito.org
