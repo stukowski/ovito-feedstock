@@ -10,7 +10,7 @@ cmake -G "NMake Makefiles" ^
       -DOVITO_BUILD_PYTHON_PACKAGE=OFF ^
       -DOVITO_BUILD_CONDA=ON ^
       -DCMAKE_BUILD_TYPE=Release ^
-      -DCMAKE_INSTALL_PREFIX=%PREFIX% ^
+      -DCMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ^
       -DCMAKE_PREFIX_PATH=%LIBRARY_PREFIX% ^
       %SRC_DIR%
 if errorlevel 1 exit 1
