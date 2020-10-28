@@ -31,7 +31,7 @@ requirements:
     - cmake
     - make  # [unix]
   host:
-    - boost
+    - boost-cpp
     - ffmpeg
     - libnetcdf
     - qt
@@ -40,6 +40,7 @@ requirements:
   run:
     # nettle from defaults is not compatible
     - {{ pin_compatible('nettle', exact=True) }}  # [unix]
+    - boost-cpp
 
 test:
   commands:
