@@ -16,6 +16,8 @@ Documentation: http://www.ovito.org/
 OVITO is a scientific visualization and analysis software for
 atomistic and particle simulation data. It helps scientists gain
 better insights into materials phenomena and physical processes.
+Since version 3.0, this package provide OVITO BASIC without the python modules.
+For all features, use the licensed OVITO PRO version.
 OVITO is being developed by Alexander Stukowski at Darmstadt
 University of Technology, Germany.
 
@@ -158,5 +160,6 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@ericpre](https://github.com/ericpre/)
 * [@jan-janssen](https://github.com/jan-janssen/)
 

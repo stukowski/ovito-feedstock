@@ -1,4 +1,4 @@
-boost:
+boost_cpp:
 - 1.72.0
 c_compiler:
 - gcc
@@ -21,7 +21,7 @@ ffmpeg:
 libnetcdf:
 - 4.7.4
 pin_run_as_build:
-  boost:
+  boost-cpp:
     max_pin: x.x.x
   ffmpeg:
     max_pin: x.x
