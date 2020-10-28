@@ -1,6 +1,6 @@
 {% set name = "ovito" %}
-{% set version = "2.9.0" %}
-{% set sha256 = "f0fc561d0e995002c48bee6dc5f7e95c69dd52615a735a1707664a7a5f0e19c4" %}
+{% set version = "3.3.1" %}
+{% set sha256 = "b0bd9a3d5bf2c3fd709985437f8ae10ad0567ffcc71255a0d4a73748f2c7858c" %}
 
 package:
   name: {{ name|lower }}
@@ -9,55 +9,55 @@ package:
 source:
   url: https://gitlab.com/stuko/{{ name }}/-/archive/v{{ version }}/{{ name }}-v{{ version }}.tar.gz
   sha256: {{ sha256 }}
-  patches:
-  - gcc_7_2.patch
 
 build:
-  number: 5
-  skip: True  # [not linux]
+  number: 0
+  ignore_run_exports:
+    - libxslt
 
 requirements:
   build:
-    - {{ compiler('cxx') }}
     - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+    - {{ cdt('libselinux') }}  # [linux]
+    - {{ cdt('libxcb') }}  # [linux]
+    - {{ cdt('libxdamage') }}  # [linux]
+    - {{ cdt('libxfixes') }}  # [linux]
+    - {{ cdt('libxext-devel') }}  # [linux]
+    - {{ cdt('libxxf86vm') }}  # [linux]
+    - {{ cdt('libXau') }}  # [linux]
     - {{ cdt('mesa-libgl-devel') }}  # [linux]
     - {{ cdt('mesa-dri-drivers') }}  # [linux]
-    - {{ cdt('libselinux') }}  # [linux]
-    - {{ cdt('libxdamage') }}  # [linux]
-    - {{ cdt('libxxf86vm') }}  # [linux]
-    - sphinx
     - cmake
-    - make
-    - git
+    - make  # [unix]
   host:
-    - xorg-libxfixes  # [linux]
+    - boost-cpp
+    - ffmpeg
+    - libnetcdf
     - qt
-    - python
-    - numpy
-    - pyqt
-    - qscintilla2
-    - boost =1.57.0
+    - libxslt
     - zlib
-    - fftw
   run:
-    - python
-    - matplotlib
-    - ase
+    # nettle from defaults is not compatible
+    - {{ pin_compatible('nettle', exact=True) }}  # [unix]
+    - boost-cpp
 
 test:
-  imports:
-    - ovito
+  commands:
+    - command -v ovito  # [unix]
+    - where ovito  # [win]
 
 about:
   home: https://www.ovito.org
-  license: GPL-3.0
-  license_family: GPL
+  license: GPL-3.0-or-later
   license_file: '{{ environ["RECIPE_DIR"] }}/LICENSE.txt'
   summary: 'Scientific visualization and analysis software for atomistic simulation data'
   description: |
     OVITO is a scientific visualization and analysis software for
     atomistic and particle simulation data. It helps scientists gain
     better insights into materials phenomena and physical processes.
+    Since version 3.0, this package provide OVITO BASIC without the python modules.
+    For all features, use the licensed OVITO PRO version.
     OVITO is being developed by Alexander Stukowski at Darmstadt
     University of Technology, Germany.
   doc_url: http://www.ovito.org/
@@ -66,3 +66,4 @@ about:
 extra:
   recipe-maintainers:
     - jan-janssen
+    - ericpre
