@@ -1,5 +1,11 @@
 setlocal EnableDelayedExpansion
 
+set MENU_DIR=%PREFIX%\Menu
+if not exist %MENU_DIR% mkdir %MENU_DIR%
+
+copy %RECIPE_DIR%\ovito.ico %MENU_DIR%
+copy %RECIPE_DIR%\menu-windows.json %MENU_DIR%\ovito.json
+
 :: Configure using the CMakeFiles
 cmake -G "NMake Makefiles" ^
       -DOVITO_BUILD_DOCUMENTATION=ON ^
