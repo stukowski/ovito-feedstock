@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   ignore_run_exports:
     - libxslt
 
@@ -46,6 +46,8 @@ test:
   commands:
     - command -v ovito  # [unix]
     - where ovito  # [win]
+    - if not exist %PREFIX%\\Menu\\ovito.json exit 1  # [win]
+    - if not exist %PREFIX%\\Menu\\ovito.ico exit 1  # [win]
 
 about:
   home: https://www.ovito.org
