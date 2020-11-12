@@ -1,6 +1,6 @@
 {% set name = "ovito" %}
-{% set version = "3.3.1" %}
-{% set sha256 = "b0bd9a3d5bf2c3fd709985437f8ae10ad0567ffcc71255a0d4a73748f2c7858c" %}
+{% set version = "3.3.2" %}
+{% set sha256 = "d873951af7fb6e10877dba8d04d2e6bdc2ad6c0b5e6ceec777854352242b6602" %}
 
 package:
   name: {{ name|lower }}
@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   ignore_run_exports:
     - libxslt
 
@@ -52,8 +52,8 @@ test:
 about:
   home: https://www.ovito.org
   license: GPL-3.0-or-later
-  license_file: '{{ environ["RECIPE_DIR"] }}/LICENSE.txt'
-  summary: 'Scientific visualization and analysis software for atomistic simulation data'
+  license_file: {{ environ["RECIPE_DIR"] }}/LICENSE.txt
+  summary: Scientific visualization and analysis software for atomistic simulation data
   description: |
     OVITO is a scientific visualization and analysis software for
     atomistic and particle simulation data. It helps scientists gain
