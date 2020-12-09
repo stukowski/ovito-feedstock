@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   ignore_run_exports:
     - libxslt
 
@@ -69,3 +69,4 @@ extra:
   recipe-maintainers:
     - jan-janssen
     - ericpre
+    - stukowski

@@ -183,4 +183,5 @@ Feedstock Maintainers
 
 * [@ericpre](https://github.com/ericpre/)
 * [@jan-janssen](https://github.com/jan-janssen/)
+* [@stukowski](https://github.com/stukowski/)
 
