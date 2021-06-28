@@ -12,8 +12,6 @@ source:
 
 build:
   number: 0
-  ignore_run_exports:
-    - libxslt
 
 requirements:
   build:
@@ -35,7 +33,8 @@ requirements:
     - ffmpeg
     - libnetcdf
     - qt
-    - libxslt
+    - sphinx
+    - sphinx_rtd_theme
     - zlib
   run:
     # nettle from defaults is not compatible
