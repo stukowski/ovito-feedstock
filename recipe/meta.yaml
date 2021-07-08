@@ -1,6 +1,6 @@
 {% set name = "ovito" %}
-{% set version = "3.4.4" %}
-{% set sha256 = "215ac922feea17d502d022fe6decb3bef22324767f7c2b1ca1fe1682e07751ec" %}
+{% set version = "3.5.2" %}
+{% set sha256 = "95990081a5ca0763cb373cc0e27cbbdc8bd9279ee77bcc11743c30ef4180c854" %}
 
 package:
   name: {{ name|lower }}
@@ -11,9 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
-  ignore_run_exports:
-    - libxslt
+  number: 0
 
 requirements:
   build:
@@ -35,7 +33,8 @@ requirements:
     - ffmpeg
     - libnetcdf
     - qt
-    - libxslt
+    - sphinx
+    - sphinx_rtd_theme
     - zlib
   run:
     # nettle from defaults is not compatible
