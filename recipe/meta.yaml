@@ -32,13 +32,12 @@ requirements:
     - boost-cpp
     - ffmpeg
     - libnetcdf
+    - nettle  # [unix]
     - qt
     - sphinx
     - sphinx_rtd_theme
     - zlib
   run:
-    # nettle from defaults is not compatible
-    - {{ pin_compatible('nettle', exact=True) }}  # [unix]
     - boost-cpp
   run_constrained:
     - menuinst >=1.4.17
