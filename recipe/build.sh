@@ -3,7 +3,7 @@
 mkdir build
 cd build
 
-if [[ -z "$MACOSX_DEPLOYMENT_TARGET" ]]; then
+if [[ -n "$MACOSX_DEPLOYMENT_TARGET" ]]; then
     export CXXFLAGS="${CXXFLAGS} -D_LIBCPP_DISABLE_AVAILABILITY"
 fi
 
