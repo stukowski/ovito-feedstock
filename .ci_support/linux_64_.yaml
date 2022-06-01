@@ -20,13 +20,9 @@ ffmpeg:
 - '4.4'
 libnetcdf:
 - 4.8.1
-nettle:
-- '3.7'
 pin_run_as_build:
   boost-cpp:
     max_pin: x.x.x
-  nettle:
-    max_pin: x.x
   qt:
     max_pin: x.x
   zlib:
