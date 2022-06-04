@@ -23,12 +23,10 @@ macos_machine:
 pin_run_as_build:
   boost-cpp:
     max_pin: x.x.x
-  qt:
-    max_pin: x.x
   zlib:
     max_pin: x.x
-qt:
-- '5.12'
+qt_main:
+- '5.15'
 target_platform:
 - osx-64
 zip_keys:
