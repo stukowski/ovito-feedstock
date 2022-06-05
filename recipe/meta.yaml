@@ -28,13 +28,13 @@ requirements:
     - {{ cdt('mesa-dri-drivers') }}  # [linux]
     - cmake
     - make  # [unix]
+    - sphinx
+    - sphinx_rtd_theme
   host:
     - boost-cpp
     - ffmpeg
     - libnetcdf
     - qt-main
-    - sphinx
-    - sphinx_rtd_theme
     - zlib
   run:
     # nettle from defaults is not compatible
