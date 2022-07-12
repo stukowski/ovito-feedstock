@@ -9,7 +9,7 @@ channel_targets:
 cxx_compiler:
 - vs2017
 ffmpeg:
-- '4.3'
+- '4.4'
 libnetcdf:
 - 4.8.1
 pin_run_as_build:
