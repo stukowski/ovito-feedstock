@@ -1,6 +1,6 @@
 {% set name = "ovito" %}
-{% set version = "3.7.11" %}
-{% set sha256 = "0a377ee97ca52d73df7887e9964e730d31c262d4dc18f3fea758c229b945f288" %}
+{% set version = "3.7.12" %}
+{% set sha256 = "e96743f984d6fc385bdf6296a51978aa63aaa60ea4b57414199596a019a42694" %}
 
 package:
   name: {{ name|lower }}
