@@ -31,6 +31,8 @@ requirements:
     - cmake
     - boost-cpp
     - make  # [unix]
+    - sphinx
+    - sphinx_rtd_theme
   host:
     - ffmpeg
     - libnetcdf
