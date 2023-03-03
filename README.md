@@ -1,25 +1,25 @@
-About ovito
-===========
+About ovito-feedstock
+=====================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/ovito-feedstock/blob/main/LICENSE.txt)
 
 Home: https://www.ovito.org
 
 Package license: GPL-3.0-or-later
 
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/ovito-feedstock/blob/main/LICENSE.txt)
-
 Summary: Scientific visualization and analysis software for atomistic simulation data
 
 Development: https://gitlab.com/stuko/ovito
 
-Documentation: http://www.ovito.org/
+Documentation: https://www.ovito.org/docs/current/
 
 OVITO is a scientific visualization and analysis software for
 atomistic and particle simulation data. It helps scientists gain
 better insights into materials phenomena and physical processes.
-Since version 3.0, this package provide OVITO BASIC without the python modules.
-For all features, use the licensed OVITO PRO version.
-OVITO is being developed by Alexander Stukowski at Darmstadt
-University of Technology, Germany.
+This package provides the OVITO Basic desktop application without the Python modules.
+For all features, use the licensed OVITO Pro version.
+OVITO is being developed by OVITO GmbH, Germany.
+The developers offer a separate conda package that also includes the OVITO Python module.
 
 
 Current build status
