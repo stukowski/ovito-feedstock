@@ -5,7 +5,9 @@ cd build
 
 if [[ -n "$MACOSX_DEPLOYMENT_TARGET" ]]; then
     export CXXFLAGS="${CXXFLAGS} -D_LIBCPP_DISABLE_AVAILABILITY"
-    export QT_HOST_PATH="$BUILD_PREFIX"
+    if [[ "$build_platform" != "$target_platform" ]]; then
+        export QT_HOST_PATH="$BUILD_PREFIX"
+    fi
 fi
 
 cmake ${CMAKE_ARGS} -DOVITO_BUILD_DOCUMENTATION=ON \
