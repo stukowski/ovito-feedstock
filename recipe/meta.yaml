@@ -31,6 +31,7 @@ requirements:
     - cmake
     - boost-cpp
     - make  # [unix]
+    - qt6-main  # [build_platform != target_platform]
   host:
     - ffmpeg
     - libnetcdf
