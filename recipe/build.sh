@@ -5,9 +5,16 @@ cd build
 
 if [[ -n "$MACOSX_DEPLOYMENT_TARGET" ]]; then
     export CXXFLAGS="${CXXFLAGS} -D_LIBCPP_DISABLE_AVAILABILITY"
+    if [[ "$build_platform" != "$target_platform" ]]; then
+        export QT_HOST_PATH="$BUILD_PREFIX"
+    fi
 fi
 
 cmake ${CMAKE_ARGS} -DOVITO_BUILD_DOCUMENTATION=ON \
+      -DPython3_ROOT_DIR="${PREFIX}" \
+      -DPython3_FIND_STRATEGY=LOCATION \
+      -DPython3_FIND_VIRTUALENV=ONLY \
+      -DPython3_EXECUTABLE=${PYTHON} \
       -DOVITO_BUILD_GUI=ON \
       -DOVITO_BUILD_MONOLITHIC=OFF \
       -DOVITO_REDISTRIBUTABLE_PACKAGE=OFF \

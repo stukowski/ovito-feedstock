@@ -1,5 +1,7 @@
 MACOSX_DEPLOYMENT_TARGET:
-- '10.9'
+- '10.14'
+MACOSX_SDK_VERSION:
+- '11.0'
 boost_cpp:
 - 1.78.0
 c_compiler:
@@ -23,8 +25,6 @@ macos_machine:
 pin_run_as_build:
   boost-cpp:
     max_pin: x.x.x
-qt_main:
-- '5.15'
 target_platform:
 - osx-64
 zip_keys:

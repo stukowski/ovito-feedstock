@@ -23,8 +23,6 @@ libnetcdf:
 pin_run_as_build:
   boost-cpp:
     max_pin: x.x.x
-qt_main:
-- '5.15'
 target_platform:
 - linux-64
 zip_keys:

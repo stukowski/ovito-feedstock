@@ -1,6 +1,6 @@
 {% set name = "ovito" %}
-{% set version = "3.7.12" %}
-{% set sha256 = "e96743f984d6fc385bdf6296a51978aa63aaa60ea4b57414199596a019a42694" %}
+{% set version = "3.8.0" %}
+{% set sha256 = "04ddf7d3e766272bbb3ef572bc06094795c273ba8cf94a70039dd7e101c0f13c" %}
 
 package:
   name: {{ name|lower }}
@@ -11,7 +11,9 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
+  ignore_run_exports:
+    - boost-cpp
 
 requirements:
   build:
@@ -27,19 +29,21 @@ requirements:
     - {{ cdt('mesa-libgl-devel') }}  # [linux]
     - {{ cdt('mesa-dri-drivers') }}  # [linux]
     - cmake
-    - make  # [unix]
-    - sphinx
-    - sphinx_rtd_theme
-  host:
     - boost-cpp
+    - make  # [unix]
+    - python                                # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}    # [build_platform != target_platform]
+    - qt6-main                              # [build_platform != target_platform]
+  host:
     - ffmpeg
     - libnetcdf
-    - qt-main
+    - qt6-main
     - zlib
+    - sphinx
+    - sphinx_rtd_theme
   run:
     # nettle from defaults is not compatible
     - {{ pin_compatible('nettle', exact=True) }}  # [unix]
-    - boost-cpp
   run_constrained:
     - menuinst >=1.4.17
 
@@ -59,11 +63,11 @@ about:
     OVITO is a scientific visualization and analysis software for
     atomistic and particle simulation data. It helps scientists gain
     better insights into materials phenomena and physical processes.
-    Since version 3.0, this package provide OVITO BASIC without the python modules.
-    For all features, use the licensed OVITO PRO version.
-    OVITO is being developed by Alexander Stukowski at Darmstadt
-    University of Technology, Germany.
-  doc_url: http://www.ovito.org/
+    This package provides the OVITO Basic desktop application without the Python modules.
+    For all features, use the licensed OVITO Pro version.
+    OVITO is being developed by OVITO GmbH, Germany. 
+    The developers offer a separate conda package that also includes the OVITO Python module.
+  doc_url: https://www.ovito.org/docs/current/
   dev_url: https://gitlab.com/stuko/ovito
 
 extra:
