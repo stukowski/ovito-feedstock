@@ -11,7 +11,7 @@ cxx_compiler:
 ffmpeg:
 - '5'
 libnetcdf:
-- 4.9.1
+- 4.9.2
 pin_run_as_build:
   boost-cpp:
     max_pin: x.x.x
