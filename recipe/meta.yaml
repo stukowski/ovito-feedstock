@@ -1,6 +1,6 @@
 {% set name = "ovito" %}
-{% set version = "3.8.0" %}
-{% set sha256 = "04ddf7d3e766272bbb3ef572bc06094795c273ba8cf94a70039dd7e101c0f13c" %}
+{% set version = "3.8.2" %}
+{% set sha256 = "6cfb0b7d2427f229c13f9af05d8255309f06431a9fc6c46594be76d3e9e105a8" %}
 
 package:
   name: {{ name|lower }}
@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   ignore_run_exports:
     - boost-cpp
 
@@ -29,7 +29,12 @@ requirements:
     - {{ cdt('mesa-libgl-devel') }}  # [linux]
     - {{ cdt('mesa-dri-drivers') }}  # [linux]
     - cmake
-    - boost-cpp
+    # Mac OS needs specific boost restrictions - temporarily 
+    # https://github.com/conda-forge/boost-cpp-feedstock/issues/134
+    # https://github.com/conda-forge/libcxx-feedstock/issues/114
+    - boost-cpp  # [linux]
+    - boost-cpp  # [win]
+    - boost-cpp >=1.81  # [osx]
     - make  # [unix]
     - python                                # [build_platform != target_platform]
     - cross-python_{{ target_platform }}    # [build_platform != target_platform]
