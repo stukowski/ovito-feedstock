@@ -11,7 +11,7 @@ if [[ -n "$MACOSX_DEPLOYMENT_TARGET" ]]; then
 fi
 
 cmake ${CMAKE_ARGS} -DOVITO_BUILD_DOCUMENTATION=ON \
-      -DPython3_ROOT_DIR="${PREFIX}" \
+      -DPython3_ROOT_DIR="${BUILD_PREFIX}" \
       -DPython3_FIND_STRATEGY=LOCATION \
       -DPython3_FIND_VIRTUALENV=ONLY \
       -DPython3_EXECUTABLE=${PYTHON} \

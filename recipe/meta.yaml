@@ -31,16 +31,14 @@ requirements:
     - cmake
     - boost-cpp
     - make  # [unix]
-    - python                                # [build_platform != target_platform]
-    - cross-python_{{ target_platform }}    # [build_platform != target_platform]
+    - sphinx
+    - sphinx_rtd_theme
     - qt6-main                              # [build_platform != target_platform]
   host:
     - ffmpeg
     - libnetcdf
     - qt6-main
     - zlib
-    - sphinx
-    - sphinx_rtd_theme
   run_constrained:
     - menuinst >=1.4.17  # [win]
 
