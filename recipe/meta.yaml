@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   ignore_run_exports:
     - boost-cpp
 
@@ -29,28 +29,18 @@ requirements:
     - {{ cdt('mesa-libgl-devel') }}  # [linux]
     - {{ cdt('mesa-dri-drivers') }}  # [linux]
     - cmake
-    # Mac OS needs specific boost restrictions - temporarily 
-    # https://github.com/conda-forge/boost-cpp-feedstock/issues/134
-    # https://github.com/conda-forge/libcxx-feedstock/issues/114
-    - boost-cpp  # [linux]
-    - boost-cpp  # [win]
-    - boost-cpp >=1.81  # [osx]
+    - boost-cpp
     - make  # [unix]
-    - python                                # [build_platform != target_platform]
-    - cross-python_{{ target_platform }}    # [build_platform != target_platform]
+    - sphinx
+    - sphinx_rtd_theme
     - qt6-main                              # [build_platform != target_platform]
   host:
     - ffmpeg
     - libnetcdf
     - qt6-main
     - zlib
-    - sphinx
-    - sphinx_rtd_theme
-  run:
-    # nettle from defaults is not compatible
-    - {{ pin_compatible('nettle', exact=True) }}  # [unix]
   run_constrained:
-    - menuinst >=1.4.17
+    - menuinst >=1.4.17  # [win]
 
 test:
   commands:

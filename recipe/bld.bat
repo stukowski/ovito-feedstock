@@ -8,7 +8,7 @@ copy %RECIPE_DIR%\menu-windows.json %MENU_DIR%\ovito.json
 
 :: Configure using the CMakeFiles
 cmake -G "NMake Makefiles" ^
-      -D Python3_ROOT_DIR=%PREFIX% ^
+      -D Python3_ROOT_DIR=%BUILD_PREFIX% ^
       -D Python3_FIND_STRATEGY=LOCATION ^
       -D Python3_FIND_VIRTUALENV=ONLY ^
       -D Python3_EXECUTABLE=%PYTHON% ^
@@ -22,8 +22,6 @@ cmake -G "NMake Makefiles" ^
       -D CMAKE_BUILD_TYPE=Release ^
       -D CMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ^
       -D CMAKE_PREFIX_PATH=%LIBRARY_PREFIX% ^
-      -D Python3_FIND_REGISTRY=NEVER ^
-      -D Python3_FIND_STRATEGY=LOCATION ^
       %SRC_DIR%
 if errorlevel 1 exit 1
 
