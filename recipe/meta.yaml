@@ -1,6 +1,6 @@
 {% set name = "ovito" %}
-{% set version = "3.8.4" %}
-{% set sha256 = "9c53e7a2fcbbcc4832e7fb8ddb1c4dc984cf1d62d6e9f47bfc9bb56d781763c9" %}
+{% set version = "3.8.5" %}
+{% set sha256 = "2d21201c766d26bc23e8932434852d576bd443bacd8a7adeffea2145ca1a3b17" %}
 
 package:
   name: {{ name|lower }}
@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   ignore_run_exports:
     - boost-cpp
 
