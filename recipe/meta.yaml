@@ -37,6 +37,7 @@ requirements:
     - libnetcdf
     - qt6-main
     - zlib
+    - libssh   # [not win]
   run_constrained:
     - menuinst >=1.4.17  # [win]
 
