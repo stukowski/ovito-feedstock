@@ -27,12 +27,12 @@ requirements:
     - {{ cdt('mesa-libgl-devel') }}  # [linux]
     - {{ cdt('mesa-dri-drivers') }}  # [linux]
     - cmake
-    - libboost-headers
     - make  # [unix]
     - sphinx
     - sphinx_rtd_theme
     - qt6-main                              # [build_platform != target_platform]
   host:
+    - libboost-headers
     - ffmpeg
     - libnetcdf
     - qt6-main
