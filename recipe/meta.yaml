@@ -1,6 +1,6 @@
 {% set name = "ovito" %}
-{% set version = "3.9.4" %}
-{% set sha256 = "e5d813ed20f536859a64bd60cb817ce7cdbc5062bd519cd51b9517b89b59b94d" %}
+{% set version = "3.10.0" %}
+{% set sha256 = "abf0f83273da7019cec700daa886f4b07c5be2fa3f3c1aba85c6dfe023a0ae61" %}
 
 package:
   name: {{ name|lower }}
@@ -12,8 +12,6 @@ source:
 
 build:
   number: 0
-  ignore_run_exports:
-    - boost-cpp
 
 requirements:
   build:
@@ -29,16 +27,17 @@ requirements:
     - {{ cdt('mesa-libgl-devel') }}  # [linux]
     - {{ cdt('mesa-dri-drivers') }}  # [linux]
     - cmake
-    - boost-cpp
     - make  # [unix]
     - sphinx
     - sphinx_rtd_theme
     - qt6-main                              # [build_platform != target_platform]
   host:
+    - libboost-headers
     - ffmpeg
     - libnetcdf
     - qt6-main
     - zlib
+    - libssh   # [not win]
   run_constrained:
     - menuinst >=1.4.17  # [win]
 
