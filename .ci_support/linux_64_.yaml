@@ -18,6 +18,8 @@ ffmpeg:
 - '6'
 libnetcdf:
 - 4.9.2
+libssh:
+- '0.10'
 qt6_main:
 - '6.6'
 target_platform:
