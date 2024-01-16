@@ -18,6 +18,8 @@ ffmpeg:
 - '6'
 libnetcdf:
 - 4.9.2
+libssh:
+- '0.10'
 macos_machine:
 - x86_64-apple-darwin13.4.0
 qt6_main:
