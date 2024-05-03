@@ -1,6 +1,6 @@
 {% set name = "ovito" %}
-{% set version = "3.10.5" %}
-{% set sha256 = "9af871dfcc2cc1a2c3d62c551749d17a4a0e489cd527186c49e8e21998bc34d2" %}
+{% set version = "3.10.6" %}
+{% set sha256 = "f2830959a2b0b93557696e51906c1cad5fdbccd34f31c3ec49e761ff9ee58abf" %}
 
 package:
   name: {{ name|lower }}
@@ -16,6 +16,7 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
     - {{ cdt('libselinux') }}  # [linux]
     - {{ cdt('libxcb') }}  # [linux]
