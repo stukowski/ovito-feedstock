@@ -10,11 +10,13 @@ cxx_compiler:
 - vs2019
 ffmpeg:
 - '6'
+libboost_headers:
+- '1.86'
 libnetcdf:
 - 4.9.2
 qt6_main:
-- '6.6'
+- '6.7'
 target_platform:
 - win-64
 zlib:
-- '1.2'
+- '1'
