@@ -27,7 +27,7 @@ libnetcdf:
 libssh:
 - '0.10'
 qt6_main:
-- '6.7'
+- '6.8'
 target_platform:
 - linux-64
 zip_keys:
