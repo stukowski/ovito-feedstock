@@ -21,7 +21,7 @@ docker_image:
 ffmpeg:
 - '7'
 libboost_headers:
-- '1.86'
+- '1.88'
 libnetcdf:
 - 4.9.2
 libssh:
